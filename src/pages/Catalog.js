@@ -13,7 +13,7 @@ export const Catalog = () => {
   const { filter, sortBy } = useSelector(({ catalogBar }) => catalogBar);
 
   React.useEffect(() => {
-    axios.get("http://localhost:3000/data.json").then(({ data }) => {
+    axios.get("https://alexandracurlie.github.io/spa-tea-house/data.json").then(({ data }) => {
       dispatch(
         setCatalog(sortItems(filterItems(data.catalog, filter), sortBy))
       );
