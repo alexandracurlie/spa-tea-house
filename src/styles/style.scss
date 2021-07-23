@@ -1,0 +1,706 @@
+@import "variables";
+
+body {
+   position: relative;
+   min-width: 320px;
+   min-height: 100vh;
+   background-color: $background;
+   color: $font-color-dark;
+   font-size: 15px;
+   font-family: "Montserrat", sans-serif;
+}
+
+main {
+   padding-top: 100px;
+   padding-bottom: 100px;
+}
+
+section {
+   display: flex;
+   @include centred-elements;
+   margin-bottom: auto;
+   padding-bottom: 50px;
+   min-height: 500px;
+}
+
+section .container {
+   display: flex;
+   flex-direction: column;
+   @include centred-elements;
+}
+
+.title {
+   text-align: center;
+   font-size: 2em;
+   font-weight: 200;
+   margin-bottom: 0.5em;
+   text-transform: uppercase;
+
+   background: $gradient-green;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+   text-align: center;
+   font-size: 1.2rem;
+   font-weight: 400;
+   margin-bottom: 3em;
+   background: $gradient-brown;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.btn {
+   box-shadow: $shadow-out;
+   color: $font-color-dark;
+   font-family: inherit;
+   text-align: center;
+   padding: 10px;
+
+   &:hover,
+   &:focus {
+      box-shadow: $shadow-in;
+   }
+   &:active {
+      color: $hover-color;
+   }
+   &:disabled {
+      color: grey;
+      box-shadow: $shadow-out;
+   }
+}
+
+.btn-sort {
+   width: 25px;
+   height: 25px;
+   border-radius: 50%;
+   padding: 0;
+}
+
+.btn-primary {
+   width: 120px;
+   height: 40px;
+   border-radius: 20px;
+}
+
+.active {
+   color: $hover-color;
+   box-shadow: $shadow-in;
+}
+
+header,
+footer {
+   width: 100%;
+}
+
+header {
+   height: 60px;
+   position: fixed;
+   top: 0;
+   z-index: 1;
+   background-color: $background;
+   border-bottom: 1px solid $tools-color;
+}
+
+footer {
+   display: flex;
+   @include centred-elements;
+   position: absolute;
+   bottom: 0;
+   height: 50px;
+   background-color: rgba(36, 0, 0, 0.3);
+
+   .footer-text {
+      display: flex;
+      justify-content: space-evenly;
+
+      p {
+         font-size: 0.85rem;
+      }
+   }
+}
+
+.navigation {
+   display: flex;
+   justify-content: space-between;
+   height: 100%;
+
+   .logo {
+      display: flex;
+      flex-direction: column;
+      width: 600px;
+
+      span {
+         display: block;
+      }
+
+      span:first-child {
+         text-align: center;
+         font-family: "Pacifico", sans-serif;
+         font-size: 1.5rem;
+         font-weight: bold;
+         border-bottom: 1px solid black;
+      }
+      span:last-child {
+         text-transform: lowercase;
+         text-align: center;
+         font-size: 0.8rem;
+      }
+   }
+
+   .menu {
+      display: flex;
+      justify-content: space-evenly;
+      position: relative;
+
+      li {
+         display: flex;
+         @include centred-elements;
+
+         a {
+            width: 100px;
+            padding: 10px;
+            border-radius: 20px;
+            text-align: center;
+
+            &:hover,
+            &:focus {
+               box-shadow: $shadow-in;
+               border-radius: 20px;
+            }
+         }
+      }
+   }
+
+   .active {
+      box-shadow: $shadow-in;
+      color: $hover-color;
+   }
+
+   .logo,
+   .cart {
+      height: 100%;
+   }
+
+   .cart {
+      justify-content: center;
+      text-align: center;
+      width: 100px;
+      margin-right: 20px;
+
+      a,
+      button {
+         width: 40px;
+         padding: 5px;
+         border-radius: 25px;
+      }
+   }
+
+   .menu-burger {
+      display: none;
+
+      &:hover,
+      &:focus {
+         box-shadow: $shadow-in;
+         color: $hover-color;
+      }
+   }
+}
+
+.catalog {
+   .catalog-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2em;
+      width: 100%;
+
+      .filters-container {
+         display: flex;
+         justify-content: space-evenly;
+         flex: 1 1 auto;
+
+         .col {
+            min-width: 135px;
+            padding: 10px;
+         }
+      }
+
+      .sort-container {
+         position: relative;
+         display: flex;
+         @include centred-elements;
+         min-width: 135px;
+         padding: 10px;
+
+         .drop-down {
+            position: absolute;
+            top: -15px;
+            width: 120px;
+            padding: 10px;
+            background-color: $background;
+            border-radius: 15px;
+            box-shadow: $shadow-out;
+
+            .item {
+               font-size: 0.7rem;
+               text-align: center;
+               padding: 5px;
+               border-radius: 15px;
+
+               &:hover {
+                  box-shadow: $shadow-in;
+               }
+            }
+
+            .item-active {
+               box-shadow: $shadow-in;
+               color: $hover-color;
+            }
+         }
+      }
+   }
+}
+
+.catalog-container {
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   padding-top: 10px;
+   padding-bottom: 10px;
+
+   .card {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+      align-items: center;
+      width: 200px;
+      height: 380px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 4px 4px 6px rgba(55, 84, 170, 0.15);
+      overflow: hidden;
+
+      div,
+      img {
+         width: 200px;
+         height: 200px;
+      }
+
+      .card-body {
+         height: 200px;
+         padding-left: 15px;
+         padding-right: 15px;
+      }
+
+      .card-title {
+         font-size: 18px;
+         color: $title-color;
+      }
+
+      .card-text {
+         font-size: 12px;
+         padding-top: 15px;
+         height: 60px;
+         color: #909090;
+      }
+
+      .card-price {
+         padding-top: 15px;
+         padding-bottom: 10px;
+         text-align: center;
+         font-size: 17px;
+
+         span {
+            margin-left: 15px;
+            margin-right: 15px;
+            font-weight: 400;
+         }
+      }
+
+      .container-add-item {
+         @include centred-elements;
+         width: 100%;
+         height: 60px;
+         display: flex;
+         border-top: 2px solid rgba(55, 84, 170, 0.15);
+
+         .add-btn:hover,
+         .count-btn:hover {
+            box-shadow: none;
+            color: $hover-color;
+         }
+
+         .add-btn {
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            font-weight: bold;
+         }
+
+         .count {
+            display: block;
+            text-align: center;
+            width: 34%;
+            height: 100%;
+            padding: 10px;
+            font-weight: bold;
+         }
+
+         .count-btn {
+            width: 33%;
+            height: 100%;
+            background-color: transparent;
+            color: $title-color;
+            font-weight: bold;
+            border: none;
+            box-shadow: none;
+         }
+      }
+   }
+}
+
+.cart {
+   .cart-container {
+      display: flex;
+      flex-direction: column;
+      max-width: 800px;
+      @include side-margin;
+   }
+
+   .card {
+      display: flex;
+      margin-bottom: 0.3em;
+
+      div {
+         display: flex;
+         @include centred-elements;
+      }
+
+      .card-img {
+         width: 15%;
+
+         img {
+            width: 40%;
+            border-radius: 50%;
+         }
+      }
+
+      .card-title {
+         width: 40%;
+         font-weight: bold;
+      }
+
+      .count {
+         width: 20%;
+         display: flex;
+         justify-content: space-evenly;
+
+         p {
+            font-weight: bold;
+         }
+
+         button {
+            color: $title-color;
+            font-weight: bold;
+            font-size: 0.75em;
+            padding: 0;
+            width: 16px;
+            text-align: center;
+            border-radius: 50px;
+         }
+      }
+
+      .card-price {
+         width: 15%;
+
+         p {
+            font-weight: bold;
+         }
+
+         span {
+            font-weight: normal;
+         }
+      }
+
+      .remove {
+         width: 10%;
+
+         button:hover {
+            color: $hover-color;
+         }
+      }
+   }
+
+   .total-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .total {
+         padding-top: 0.5em;
+         padding-bottom: 0.5em;
+         margin: 2rem auto;
+         text-transform: uppercase;
+         font-size: 1.2em;
+         width: 300px;
+         box-shadow: $shadow-in;
+         border-radius: 30px;
+         text-align: center;
+
+         span {
+            margin-left: 1em;
+            margin-right: 1em;
+         }
+      }
+   }
+}
+
+form {
+   display: flex;
+   flex-wrap: wrap;
+   max-width: 900px;
+
+   @include side-margin;
+
+   .col-sm {
+      display: flex;
+      justify-content: stretch;
+      width: 100%;
+      padding: 8px 8px 0 8px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+   }
+
+   .col-md {
+      flex: 1 1 auto;
+      width: 33%;
+      min-width: 250px;
+      padding: 8px 8px 0 8px;
+   }
+
+   .col-bd {
+      width: 100%;
+      padding: 8px 8px 0 8px;
+   }
+
+   label {
+      display: block;
+      padding-left: 10px;
+      margin-bottom: 5px;
+   }
+
+   input,
+   textarea {
+      font-family: inherit;
+      width: 100%;
+      border-radius: 20px;
+      border: none;
+      background: transparent;
+      box-shadow: $shadow-in;
+      padding: 9px;
+
+      &:focus {
+         background-color: transparent;
+         box-shadow: $shadow-in;
+      }
+   }
+
+   select {
+      width: 100%;
+      padding: 9px;
+      text-align: center;
+      background: transparent;
+      box-shadow: $shadow-out;
+      border: none;
+      border-radius: 20px;
+      appearance: none;
+   }
+
+   .checkbox {
+      width: 20px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      border-radius: 20px;
+      box-shadow: $shadow-out;
+      appearance: none;
+
+      &:checked {
+         box-shadow: $shadow-in;
+      }
+   }
+
+   .tooltip-box {
+      display: block;
+      @include side-margin;
+      padding: 5px 0;
+      text-align: center;
+      visibility: hidden;
+      font-size: 0.8rem;
+      background-color: transparent;
+      color: $hover-color;
+   }
+
+   .btn-next-container {
+      display: flex;
+      margin-bottom: 50px;
+   }
+}
+
+.order {
+   .container {
+      display: flex;
+      flex-direction: column;
+      @include centred-elements;
+   }
+
+   .information {
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      @include centred-elements;
+
+      .subtitle {
+         margin-top: 30px;
+      }
+   }
+
+   p {
+      margin: 10px 0;
+      text-align: center;
+      line-height: 22px;
+   }
+
+   span {
+      font-size: 15px;
+      font-weight: bold;
+      border-bottom: 1px dashed $hover-color;
+   }
+
+   button {
+      margin-top: 50px;
+   }
+}
+
+/*home page*/
+
+.info {
+   .steps-container {
+      display: flex;
+
+      .description {
+         text-align: center;
+      }
+   }
+
+   .col {
+      min-width: 250px;
+      flex-direction: column;
+      padding: 15px;
+      @include side-margin;
+   }
+
+   .card-title {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 20px;
+   }
+}
+
+.about-us {
+   .intro {
+      display: flex;
+      align-items: center;
+   }
+
+   .carousel {
+      min-height: 100px;
+      max-height: 300px;
+      overflow: hidden;
+      margin-left: 1%;
+      margin-right: 1%;
+   }
+
+   .carousel-item {
+      position: relative;
+   }
+
+   .carousel-item img {
+      width: 100%;
+      height: 100%;
+   }
+
+   .carousel-item p {
+      position: absolute;
+      text-align: justify;
+      padding: 30px;
+      background-color: rgba(240, 240, 247, 0.65);
+      border-radius: 20px;
+      color: #000;
+      z-index: 1;
+      font-size: 12px;
+      min-width: 120px;
+   }
+
+   .first {
+      width: 40%;
+      top: 30px;
+      left: 20px;
+   }
+
+   .second {
+      width: 40%;
+      top: 30px;
+      right: 30px;
+   }
+
+   .third {
+      width: 40%;
+      right: 30px;
+      top: 80px;
+   }
+
+   .btn:first-child {
+      height: 40px;
+      border-radius: 20px 0 0 20px;
+   }
+
+   .btn:last-child {
+      height: 40px;
+      border-radius: 0 20px 20px 0;
+   }
+
+   .btn:active {
+      box-shadow: $shadow-out;
+   }
+
+   .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+   }
+
+   @-webkit-keyframes fade {
+      from {
+         opacity: 0.4;
+      }
+      to {
+         opacity: 1;
+      }
+   }
+
+   @keyframes fade {
+      from {
+         opacity: 0.4;
+      }
+      to {
+         opacity: 1;
+      }
+   }
+}
