@@ -1,0 +1,124 @@
+{
+  "catalog": [
+    {
+      "id": "001",
+      "name": "Green Spikes",
+      "description": "light, delicate, floral notes",
+      "type": "Green",
+      "price": 4,
+      "img": "/catalog/1.webp"
+    },
+    {
+      "id": "002",
+      "name": "Oldman's face",
+      "description": "strong reach taste and aroma Shu pu-erh",
+      "type": "Black",
+      "price": 6,
+      "img": "/catalog/2.webp"
+    },
+    {
+      "id": "003",
+      "name": "Biggie Red",
+      "description": "highly fermented oolong with a unique aroma and flavor",
+      "type": "Black",
+      "price": 4,
+      "img": "/catalog/3.webp"
+    },
+    {
+      "id": "004",
+      "name": "Golden Bird",
+      "description": "the most delicate taste of honey, vanilla and fruits",
+      "type": "Green",
+      "price": 5,
+      "img": "/catalog/4.webp"
+    },
+    {
+      "id": "005",
+      "name": "Smoky Bush",
+      "description": "delicate taste of the tea with dried fruits and wood with a shade of smokes",
+      "type": "Green",
+      "price": 4,
+      "img": "/catalog/5.webp"
+    },
+    {
+      "id": "006",
+      "name": "Dragon Pearl",
+      "description": "delicate jasmine aroma with a sweetish taste of berries and flowers",
+      "type": "Green",
+      "price": 6,
+      "img": "/catalog/6.webp"
+    },
+    {
+      "id": "007",
+      "name": "Wild Billy",
+      "description": "caramel and nuts aroma",
+      "type": "Black",
+      "price": 3,
+      "img": "/catalog/7.webp"
+    },
+    {
+      "id": "008",
+      "name": "Peach Oolong",
+      "description": "rich and fresh taste with sweet peach aroma",
+      "type": "Green",
+      "price": 5,
+      "img": "/catalog/8.webp"
+    },
+    {
+      "id": "009",
+      "name": "Cleo",
+      "description": "fruit and floral aroma",
+      "type": "Black",
+      "price": 3,
+      "img": "/catalog/9.webp"
+    },
+    {
+      "id": "010",
+      "name": "Shogun",
+      "description": "astringent, intense, rich aroma with strawberry",
+      "type": "Green",
+      "price": 4,
+      "img": "/catalog/10.webp"
+    },
+    {
+      "id": "011",
+      "name": "Running Forest",
+      "description": "green oolong with jasmin, rose and cherry",
+      "type": "Green",
+      "price": 6,
+      "img": "/catalog/11.webp"
+    },
+    {
+      "id": "012",
+      "name": "Nara",
+      "description": "japanese fresh floral green tea with mint",
+      "type": "Green",
+      "price": 4,
+      "img": "/catalog/12.webp"
+    },
+    {
+      "id": "013",
+      "name": "Osmanthus",
+      "description": "osmanthus and daylily",
+      "type": "Green",
+      "price": 6,
+      "img": "/catalog/13.webp"
+    },
+    {
+      "id": "014",
+      "name": "Wonder Molly",
+      "description": "sweet pure taste combines the floral shades",
+      "type": "Black",
+      "price": 4,
+      "img": "/catalog/14.webp"
+    },
+    {
+      "id": "015",
+      "name": "Not Noodles",
+      "description": "spicy biscuit flavor with chocolate, dried fruits, cranberries and juniper",
+      "type": "Black",
+      "price": 5,
+      "img": "/catalog/15.webp"
+    }
+  ]
+}
