@@ -51,7 +51,7 @@ export const Cart = () => {
           {totalCartCost}
         </p>
 
-        <Link to={"/form"}>
+        <Link to={"/spa-tea-house/form"}>
           <button
             className="btn btn-primary"
             disabled={groupedItems.length === 0}

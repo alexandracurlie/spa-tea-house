@@ -50,7 +50,7 @@ export const Form = () => {
         </div>
 
         <div className="col-bd btn-next-container">
-          <Link to={"/"} className={"btn btn-primary"}>
+          <Link to={"/spa-tea-house"} className={"btn btn-primary"}>
             Home
           </Link>
         </div>

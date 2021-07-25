@@ -34,24 +34,24 @@ export const Header = () => {
 
         <ul className={toggle ? "col menu show-menu" : "col menu"} ref={menu}>
           <li>
-            <NavLink to="/" exact id="header-home">
+            <NavLink to="/spa-tea-house" exact id="header-home">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/catalog" id="header-catalog">
+            <NavLink to="/spa-tea-house/catalog" id="header-catalog">
               Catalog
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contacts" id="header-contacts">
+            <NavLink to="/spa-tea-house/contacts" id="header-contacts">
               Contacts
             </NavLink>
           </li>
         </ul>
 
         <div className="col cart">
-          <NavLink to="/cart" id="header-cart">
+          <NavLink to="/spa-tea-house/cart" id="header-cart">
             <i className="fas fa-shopping-basket" />
           </NavLink>
           <Button className={"menu-burger"} onClick={onClickBurger}>

@@ -8,11 +8,11 @@ function App() {
         <React.Fragment>
             <Header />
             <Switch>
-                <Route path={"/"} component={Home} exact />
-                <Route path={"/catalog"} component={Catalog} exact />
-                <Route path={"/cart"} component={Cart} exact />
-                <Route path={"/form"} component={Form} exact />
-                <Route path={"/order"} component={Order} exact />
+                <Route path={"/spa-tea-house"} component={Home} exact />
+                <Route path={"/spa-tea-house/catalog"} component={Catalog} exact />
+                <Route path={"/spa-tea-house/cart"} component={Cart} exact />
+                <Route path={"/spa-tea-house/form"} component={Form} exact />
+                <Route path={"/spa-tea-house/order"} component={Order} exact />
             </Switch>
             <Footer />
         </React.Fragment>
