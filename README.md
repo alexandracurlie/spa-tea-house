@@ -1,5 +1,7 @@
-# Hello, and nice to meet you!
-#### this project is still under construction, but it works
+# Hi!
+
+##### this project is still under construction, but it works
+### click [here](https://alexandracurlie.github.io/spa-tea-house) to visit Madame Pappertinio website
 
 ## Version 1.0
 ***
