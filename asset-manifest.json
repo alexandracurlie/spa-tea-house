@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/spa-tea-house/static/css/main.793682cc.chunk.css",
-    "main.js": "/spa-tea-house/static/js/main.db76638a.chunk.js",
-    "main.js.map": "/spa-tea-house/static/js/main.db76638a.chunk.js.map",
+    "main.js": "/spa-tea-house/static/js/main.49e3a8d2.chunk.js",
+    "main.js.map": "/spa-tea-house/static/js/main.49e3a8d2.chunk.js.map",
     "runtime-main.js": "/spa-tea-house/static/js/runtime-main.4723b8e6.js",
     "runtime-main.js.map": "/spa-tea-house/static/js/runtime-main.4723b8e6.js.map",
     "static/js/2.c518aa5d.chunk.js": "/spa-tea-house/static/js/2.c518aa5d.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.4723b8e6.js",
     "static/js/2.c518aa5d.chunk.js",
     "static/css/main.793682cc.chunk.css",
-    "static/js/main.db76638a.chunk.js"
+    "static/js/main.49e3a8d2.chunk.js"
   ]
 }
