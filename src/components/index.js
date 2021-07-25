@@ -9,5 +9,4 @@ export { Input } from "./Input";
 export { Select } from "./Select";
 export { Textarea } from "./Textarea";
 export { IncDecBTNs } from "./IncDecBTNs";
-export { CarouselSlide } from "./CarouselSlide";
 export { CartItem } from "./CartItem"

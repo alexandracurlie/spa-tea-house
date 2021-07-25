@@ -60,12 +60,14 @@ const cartReducer = (state = initialState, action) => {
         ...state.items,
       };
 
+      const newCartCost = state.totalCartCost - newItems[action.payload].totalPrice
+
       delete newItems[action.payload];
 
       return {
         ...state,
         items: newItems,
-        totalPrice: state.totalPrice - newItems[action.payload].totalPrice,
+        totalCartCost: newCartCost
       };
 
     case "CLEAR_CART":

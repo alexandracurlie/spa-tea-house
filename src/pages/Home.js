@@ -1,51 +1,13 @@
 import React from "react";
-import { Section, CarouselSlide, Button } from "../components";
-import { slides } from "../other/collections";
+import { Section } from "../components";
 
 //TODO: automatic carousel instead of slider
 //TODO: make a component of STEP cards
 
 export const Home = () => {
-  const [carousel, setCarousel] = React.useState(1);
-
-  const onInc = () => {
-    carousel === 3 ? setCarousel(1) : setCarousel(carousel + 1);
-  };
-
-  const onDec = () => {
-    carousel === 1 ? setCarousel(3) : setCarousel(carousel - 1);
-  };
 
   return (
     <main>
-      <Section
-        className={"about-us"}
-        title={"About Us"}
-        subtitle={"a grand tea adventure"}
-      >
-        <div className={"intro"}>
-          <Button className={"btn btn-primary"} name={"<"} onClick={onDec}>
-            <i className="fas fa-angle-left" />
-          </Button>
-
-          <div id="carousel" className="carousel">
-            {slides &&
-              slides
-                .filter((slide) => slide.id === carousel)
-                .map((slide) => (
-                  <CarouselSlide
-                    className={slide.className}
-                    img={slide.img}
-                    text={slide.text}
-                    key={`slide_${slide.id}`}
-                  />
-                ))}
-          </div>
-          <Button className={"btn btn-primary"} name={">"} onClick={onInc}>
-            <i className="fas fa-angle-right" />
-          </Button>
-        </div>
-      </Section>
       <Section
         className={"info"}
         title={"Easy way to get you favorite flavor"}
