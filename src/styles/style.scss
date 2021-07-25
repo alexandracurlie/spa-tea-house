@@ -56,6 +56,7 @@ section .container {
    color: $font-color-dark;
    font-family: inherit;
    text-align: center;
+   font-size: 13px;
    padding: 10px;
 
    &:hover,
@@ -69,13 +70,6 @@ section .container {
       color: grey;
       box-shadow: $shadow-out;
    }
-}
-
-.btn-sort {
-   width: 25px;
-   height: 25px;
-   border-radius: 50%;
-   padding: 0;
 }
 
 .btn-primary {
@@ -321,7 +315,7 @@ footer {
       .container-add-item {
          @include centred-elements;
          width: 100%;
-         height: 60px;
+         height: 50px;
          display: flex;
          border-top: 2px solid rgba(55, 84, 170, 0.15);
 
@@ -340,6 +334,7 @@ footer {
             border-radius: 0;
             box-shadow: none;
             font-weight: bold;
+            padding: 0;
          }
 
          .count {
