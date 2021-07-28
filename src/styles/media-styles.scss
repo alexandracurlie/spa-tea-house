@@ -89,12 +89,8 @@
       width: 100%;
    }
 
-   .title {
-      font-size: 1.6rem;
-   }
-
-   .subtitle {
-      font-size: 0.9rem;
+   html {
+      font-size: 12px;
    }
 
    .navigation {
@@ -106,11 +102,6 @@
    footer .footer-text {
       flex-direction: column;
       align-items: center;
-      font-size: 10px;
-
-      p {
-         font-size: 0.7rem;
-      }
    }
 
    .btn-next-container {
@@ -126,7 +117,6 @@
    }
    .about-us .carousel-item p {
       padding: 20px;
-      font-size: 8px;
    }
 }
 
@@ -141,6 +131,5 @@
 
    .about-us .carousel-item p {
       padding: 20px;
-      font-size: 6px;
    }
 }
