@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/spa-tea-house/static/css/main.5d252bce.chunk.css",
-    "main.js": "/spa-tea-house/static/js/main.2d31bfc8.chunk.js",
-    "main.js.map": "/spa-tea-house/static/js/main.2d31bfc8.chunk.js.map",
+    "main.css": "/spa-tea-house/static/css/main.da793f50.chunk.css",
+    "main.js": "/spa-tea-house/static/js/main.40ee6b37.chunk.js",
+    "main.js.map": "/spa-tea-house/static/js/main.40ee6b37.chunk.js.map",
     "runtime-main.js": "/spa-tea-house/static/js/runtime-main.4723b8e6.js",
     "runtime-main.js.map": "/spa-tea-house/static/js/runtime-main.4723b8e6.js.map",
-    "static/js/2.f07ade0c.chunk.js": "/spa-tea-house/static/js/2.f07ade0c.chunk.js",
-    "static/js/2.f07ade0c.chunk.js.map": "/spa-tea-house/static/js/2.f07ade0c.chunk.js.map",
+    "static/js/2.e786a6ac.chunk.js": "/spa-tea-house/static/js/2.e786a6ac.chunk.js",
+    "static/js/2.e786a6ac.chunk.js.map": "/spa-tea-house/static/js/2.e786a6ac.chunk.js.map",
     "index.html": "/spa-tea-house/index.html",
-    "static/css/main.5d252bce.chunk.css.map": "/spa-tea-house/static/css/main.5d252bce.chunk.css.map",
-    "static/js/2.f07ade0c.chunk.js.LICENSE.txt": "/spa-tea-house/static/js/2.f07ade0c.chunk.js.LICENSE.txt"
+    "static/css/main.da793f50.chunk.css.map": "/spa-tea-house/static/css/main.da793f50.chunk.css.map",
+    "static/js/2.e786a6ac.chunk.js.LICENSE.txt": "/spa-tea-house/static/js/2.e786a6ac.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4723b8e6.js",
-    "static/js/2.f07ade0c.chunk.js",
-    "static/css/main.5d252bce.chunk.css",
-    "static/js/main.2d31bfc8.chunk.js"
+    "static/js/2.e786a6ac.chunk.js",
+    "static/css/main.da793f50.chunk.css",
+    "static/js/main.40ee6b37.chunk.js"
   ]
 }
