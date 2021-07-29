@@ -34,7 +34,7 @@ export const CartItem = ({ props, count, onClickPlus, onClickMinus, onClickTrash
         </p>
       </div>
       <div className="remove">
-        <Button name={"tr"} onClick={removeItem}>
+        <Button name={"trash"} onClick={removeItem}>
           <i className="fas fa-trash-alt" />
         </Button>
       </div>

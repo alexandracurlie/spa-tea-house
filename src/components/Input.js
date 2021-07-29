@@ -1,21 +1,24 @@
 import React from "react";
+import _ from "lodash"
 
-export const Input = ({ props }) => {
-  return (
-    <React.Fragment>
-      <label className={"label"} htmlFor={props.name}>
-        {props.name}
-      </label>
-      <input
-        type={props.type}
-        name={props.name}
-        className={props.class}
-        id={props.id}
-        data-form={"form"}
-        placeholder={props.placeholder}
-        required={props.required}
-        key={`input_${props.name}_${props.id}`}
-      />
-    </React.Fragment>
-  );
-};
+export const Input = ({ type, name, id, className, placeholder, required = false, onChange }) => {
+
+    const onChangeValue = (evt) => {
+        onChange(id, evt.target.value)
+    }
+
+    return (
+        <React.Fragment>
+            <label className={"label"} htmlFor={id}>{_.capitalize(name)}</label>
+            <input
+                type={type}
+                name={name}
+                id={id}
+                className={className}
+                placeholder={placeholder}
+                required={required}
+                onChange={(evt) => onChangeValue(evt)}
+            />
+        </React.Fragment>
+    )
+}

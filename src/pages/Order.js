@@ -1,29 +1,44 @@
-import { Button, Main } from "../components";
+import { Main } from "../components";
 import { Link } from "react-router-dom";
-
-//TODO:  the final order after filled form
+import {useDispatch, useSelector} from "react-redux";
+import _ from "lodash"
+import React from "react";
+import {clearCart, clearInputs} from "../redux/actions";
 
 export const Order = () => {
+    const dispatch = useDispatch()
+
+    const { name, phone, address, date, time } = useSelector(({ user }) => user)
+    const { totalCartCost } = useSelector(({ cart }) => cart)
+
+    const onClick = () => {
+        dispatch(clearCart())
+        dispatch(clearInputs())
+    }
+
   return (
     <Main className={"order"} title={"Woohoo!"} subtitle={"Order № 123123123"}>
+
       <div className={"information"}>
         <p>
-          Wait for a delivery on <span>01.12.2021</span> from{" "}
-          <span>3pm to 9 pm</span>
+          Your order will arrive on <span>{date.split("-").reverse().join(".")}</span> from
+          <span>{time}</span>
         </p>
         <p>
-          Our Delivery Guy will call you <span>89701234561</span> a few minutes
-          before he reaches the address <span>Moscow Kievskaya 5</span>
+          Our Delivery Guy will call you <span>{phone}</span> a few minutes
+          before he reaches the address <span>{address}</span>
         </p>
         <p>
-          Total cost of your order<span> &#8364; 22</span>
+          Total cost of your order<span> &#8364; {totalCartCost}</span>
         </p>
-        <p className="subtitle">Thank you for your order, Anton!</p>
+        <p className="goodbye">Thank you for your order, {_.capitalize(name)}</p>
       </div>
 
-      <Link to={"/"} exact>
-        <Button className="btn-primary" name={"Main page"} />
-      </Link>
+        <div className="col-bd btn-next-container">
+            <Link to={"/spa-tea-house/"} className={"btn btn-primary"} onClick={onClick}>
+                Home
+            </Link>
+        </div>
     </Main>
   );
 };

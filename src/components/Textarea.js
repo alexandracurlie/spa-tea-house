@@ -1,19 +1,27 @@
 import React from "react";
+import _ from "lodash"
 
-export const Textarea = ({ props }) => {
-  return (
-    <React.Fragment>
-      <label className={"label"} htmlFor={props.id}>
-        {props.name}
-      </label>
-      <textarea
-        name={props.name}
-        className={props.class}
-        id={props.id}
-        data-form={"form"}
-        placeholder={props.placeholder}
-        key={`textarea_${props.name}_${props.id}`}
-      />
-    </React.Fragment>
-  );
-};
+export const Textarea = ({ name, id, className, placeholder, rows, onChange, required = false }) => {
+
+    const onChangeValue = (evt) => {
+        onChange(id, evt.target.value)
+    }
+
+    return (
+        <React.Fragment>
+            <label className={"label"} htmlFor={id}>
+                {_.capitalize(name)}
+            </label>
+            <textarea
+                name={name}
+                id={id}
+                className={className}
+                placeholder={placeholder}
+                rows={rows}
+                required={required}
+                onChange={(evt) => onChangeValue(evt)}
+            />
+        </React.Fragment>
+    )
+}
+

@@ -55,10 +55,12 @@ section .container {
 }
 
 .btn {
+   display: block;
+   text-align: center;
    box-shadow: $shadow-out;
    color: $font-color-dark;
    font-family: inherit;
-   text-align: center;
+   font-weight: 400;
    font-size: 13px;
    padding: 10px;
 
@@ -79,6 +81,11 @@ section .container {
    width: 120px;
    height: 40px;
    border-radius: 20px;
+}
+
+.btn-next-container {
+   display: flex;
+   margin: 50px auto;
 }
 
 .active {
@@ -447,6 +454,10 @@ footer {
    }
 }
 
+
+
+
+
 form {
    display: flex;
    flex-wrap: wrap;
@@ -479,6 +490,8 @@ form {
       display: block;
       padding-left: 10px;
       margin-bottom: 5px;
+      margin-top: 5px;
+      font-size: 15px;
    }
 
    input,
@@ -489,7 +502,7 @@ form {
       border: none;
       background: transparent;
       box-shadow: $shadow-in;
-      padding: 9px;
+      padding: 9px 15px;
 
       &:focus {
          background-color: transparent;
@@ -499,18 +512,20 @@ form {
 
    select {
       width: 100%;
-      padding: 9px;
+      padding: 9px 15px;
       text-align: center;
       background: transparent;
       box-shadow: $shadow-out;
       border: none;
       border-radius: 20px;
       appearance: none;
+      font-family: inherit;
    }
 
    .checkbox {
       width: 20px;
       height: 20px;
+      padding: 9px;
       background: transparent;
       border: none;
       border-radius: 20px;
@@ -533,10 +548,7 @@ form {
       color: $hover-color;
    }
 
-   .btn-next-container {
-      display: flex;
-      margin-bottom: 50px;
-   }
+
 }
 
 .order {
@@ -548,9 +560,11 @@ form {
 
    .information {
       max-width: 700px;
+      min-height: 300px;
       display: flex;
       flex-direction: column;
       @include centred-elements;
+      border-radius: 20px;
 
       .subtitle {
          margin-top: 30px;
@@ -558,16 +572,26 @@ form {
    }
 
    p {
-      margin: 10px 0;
+      font-size: 1.2rem;
+      margin: 6px 0;
       text-align: center;
-      line-height: 22px;
+      line-height: 30px;
+
+      span {
+         font-size: 1.2rem;
+         font-weight: bold;
+         margin: 0 5px;
+         color: rgb(8, 101, 60);
+         border-bottom: 1px dashed $hover-color;
+      }
    }
 
-   span {
-      font-size: 15px;
-      font-weight: bold;
-      border-bottom: 1px dashed $hover-color;
+   .goodbye {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-top: 30px;
    }
+
 
    button {
       margin-top: 50px;
