@@ -2,11 +2,10 @@ import React from "react";
 import {useStyles} from "./styles";
 
 export const Button = (props) => {
-
   const styles = useStyles()
 
   return (
-      <button name={props.name}
+      <button {...props}
               className={props.className ? props.className :  styles.container}
               onClick={props.onClick}
               disabled={props.disabled}>

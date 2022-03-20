@@ -108,7 +108,6 @@ header {
 }
 
 
-
 .navigation {
    display: flex;
    justify-content: space-between;
@@ -197,84 +196,6 @@ header {
 }
 
 form {
-   display: flex;
-   flex-wrap: wrap;
-   max-width: 900px;
-
-   @include side-margin;
-
-   .col-sm {
-      display: flex;
-      justify-content: stretch;
-      width: 100%;
-      padding: 8px 8px 0 8px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-   }
-
-   .col-md {
-      flex: 1 1 auto;
-      width: 33%;
-      min-width: 250px;
-      padding: 8px 8px 0 8px;
-   }
-
-   .col-bd {
-      width: 100%;
-      padding: 8px 8px 0 8px;
-   }
-
-   label {
-      display: block;
-      padding-left: 10px;
-      margin-bottom: 5px;
-      margin-top: 5px;
-      font-size: 15px;
-   }
-
-   input,
-   textarea {
-      font-family: inherit;
-      width: 100%;
-      border-radius: 20px;
-      border: none;
-      background: transparent;
-      box-shadow: $shadow-in;
-      padding: 9px 15px;
-
-      &:focus {
-         background-color: transparent;
-         box-shadow: $shadow-in;
-      }
-   }
-
-   select {
-      width: 100%;
-      padding: 9px 15px;
-      text-align: center;
-      background: transparent;
-      box-shadow: $shadow-out;
-      border: none;
-      border-radius: 20px;
-      appearance: none;
-      font-family: inherit;
-   }
-
-   .checkbox {
-      width: 20px;
-      height: 20px;
-      padding: 9px;
-      background: transparent;
-      border: none;
-      border-radius: 20px;
-      box-shadow: $shadow-out;
-      appearance: none;
-
-      &:checked {
-         box-shadow: $shadow-in;
-      }
-   }
-
    .tooltip-box {
       display: block;
       @include side-margin;
@@ -285,8 +206,6 @@ form {
       background-color: transparent;
       color: $hover-color;
    }
-
-
 }
 
 .order {

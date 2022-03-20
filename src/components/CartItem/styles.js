@@ -5,6 +5,7 @@ export const useStyles = makeStyles(() => ({
   container: {
     display: "flex",
     padding: 5,
+    maxWidth: 900,
   },
 
   row: {
@@ -33,9 +34,7 @@ export const useStyles = makeStyles(() => ({
     '&:last-child': {
       flex: 2,
     },
-
   },
-
 
   img: {
     width: "60",
@@ -44,11 +43,11 @@ export const useStyles = makeStyles(() => ({
   },
 
   btn: {
-    fontWeight: "bold",
-    fontSize: 10,
-    padding: 0,
     width: 16,
     height: 16,
+    padding: 0,
+    fontWeight: "bold",
+    fontSize: 10,
     textAlign: "center",
     borderRadius: 50,
     boxShadow: Shadows.out,
