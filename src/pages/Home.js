@@ -1,9 +1,6 @@
 import React from "react";
 import { Section } from "../components";
 
-//TODO: automatic carousel instead of slider
-//TODO: make a component of STEP cards
-
 export const Home = () => {
 
   return (

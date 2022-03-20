@@ -54,7 +54,7 @@ section .container {
    -webkit-text-fill-color: transparent;
 }
 
-.btn {
+/*.btn {
    display: block;
    text-align: center;
    box-shadow: $shadow-out;
@@ -91,7 +91,7 @@ section .container {
 .active {
    color: $hover-color;
    box-shadow: $shadow-in;
-}
+}*/
 
 header,
 footer {
@@ -107,23 +107,7 @@ header {
    border-bottom: 1px solid $tools-color;
 }
 
-footer {
-   display: flex;
-   @include centred-elements;
-   position: absolute;
-   bottom: 0;
-   height: 50px;
-   background-color: rgba(36, 0, 0, 0.3);
 
-   .footer-text {
-      display: flex;
-      justify-content: space-evenly;
-
-      p {
-         font-size: 0.85rem;
-      }
-   }
-}
 
 .navigation {
    display: flex;
@@ -211,252 +195,6 @@ footer {
       }
    }
 }
-
-.catalog {
-   .catalog-bar {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 2em;
-      width: 100%;
-
-      .filters-container {
-         display: flex;
-         justify-content: space-evenly;
-         flex: 1 1 auto;
-
-         .col {
-            min-width: 135px;
-            padding: 10px;
-         }
-      }
-
-      .sort-container {
-         position: relative;
-         display: flex;
-         @include centred-elements;
-         min-width: 135px;
-         padding: 10px;
-
-         .drop-down {
-            position: absolute;
-            top: -15px;
-            width: 120px;
-            padding: 10px;
-            background-color: $background;
-            border-radius: 15px;
-            box-shadow: $shadow-out;
-
-            .item {
-               font-size: 0.7rem;
-               text-align: center;
-               padding: 5px;
-               border-radius: 15px;
-
-               &:hover {
-                  box-shadow: $shadow-in;
-               }
-            }
-
-            .item-active {
-               box-shadow: $shadow-in;
-               color: $hover-color;
-            }
-         }
-      }
-   }
-}
-
-.catalog-container {
-   display: flex;
-   justify-content: space-evenly;
-   flex-wrap: wrap;
-   padding-top: 10px;
-   padding-bottom: 10px;
-
-   .card {
-      width: 200px;
-      height: 380px;
-      margin-bottom: 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: justify;
-      background-color: #fff;
-      border-radius: 20px;
-      box-shadow: 4px 4px 6px rgba(55, 84, 170, 0.15);
-      overflow: hidden;
-
-      img {
-         width: 200px;
-         height: 200px;
-      }
-
-      .card-body {
-         height: 130px;
-         padding: 0 15px;
-
-         .card-title {
-            height: 40px;
-            padding-top: 10px;
-            font-size: 18px;
-            color: $title-color;
-         }
-
-         .card-text {
-            height: 50px;
-            font-size: 12px;
-            color: #909090;
-         }
-
-         .card-price {
-            height: 40px;
-            padding-top: 10px;
-            text-align: center;
-            font-size: 17px;
-
-            span {
-               margin-left: 15px;
-               margin-right: 15px;
-               font-weight: 400;
-            }
-         }
-      }
-
-      .container-add-item {
-         width: 100%;
-         height: 50px;
-         display: flex;
-         @include centred-elements;
-         border-top: 2px solid rgba(55, 84, 170, 0.15);
-
-         .add-btn {
-            width: 100%;
-            box-shadow: none;
-         }
-
-         .count-btn {
-            width: 33%;
-            font-weight: bold;
-            box-shadow: none;
-            color: $title-color;
-         }
-
-         .count {
-            width: 34%;
-            padding: 10px;
-            display: block;
-            text-align: center;
-            font-weight: bold;
-         }
-
-         .add-btn:hover,
-         .count-btn:hover {
-            box-shadow: none;
-            color: $hover-color;
-         }
-      }
-   }
-}
-
-.cart {
-   .cart-container {
-      display: flex;
-      flex-direction: column;
-      max-width: 800px;
-      @include side-margin;
-   }
-
-   .card {
-      display: flex;
-      margin-bottom: 0.3em;
-
-      div {
-         display: flex;
-         @include centred-elements;
-      }
-
-      .card-img {
-         width: 15%;
-
-         img {
-            width: 40%;
-            border-radius: 50%;
-         }
-      }
-
-      .card-title {
-         width: 40%;
-         font-weight: bold;
-      }
-
-      .count {
-         width: 20%;
-         display: flex;
-         justify-content: space-evenly;
-
-         p {
-            font-weight: bold;
-         }
-
-         button {
-            color: $title-color;
-            font-weight: bold;
-            font-size: 10px;
-            padding: 0;
-            width: 16px;
-            text-align: center;
-            border-radius: 50px;
-         }
-      }
-
-      .card-price {
-         width: 15%;
-
-         p {
-            font-weight: bold;
-         }
-
-         span {
-            font-weight: normal;
-         }
-      }
-
-      .remove {
-         width: 10%;
-
-         button:hover {
-            color: $hover-color;
-         }
-      }
-   }
-
-   .total-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .total {
-         padding-top: 0.5em;
-         padding-bottom: 0.5em;
-         margin: 2rem auto;
-         text-transform: uppercase;
-         font-size: 17px;
-         width: 300px;
-         box-shadow: $shadow-in;
-         border-radius: 30px;
-         text-align: center;
-
-         span {
-            margin-left: 1em;
-            margin-right: 1em;
-         }
-      }
-   }
-}
-
-
-
-
 
 form {
    display: flex;

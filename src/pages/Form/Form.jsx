@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { Main, Input, Select, Textarea } from "../components";
-import { inputAction } from "../redux/actions";
+import { Main, Input, Select, Textarea } from "../../components";
+import { inputAction } from "../../redux/actions";
 
 //TODO: CHECKBOX!!!!!!!!!
 //TODO: tooltips, form validation
