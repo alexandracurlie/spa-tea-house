@@ -1,5 +1,5 @@
 import React, {useMemo} from "react";
-import {makeSize} from "../../utilities/helpers";
+import {makeSize} from "../../utilities";
 import {useStyles} from "./styles";
 
 export const Input = React.memo(

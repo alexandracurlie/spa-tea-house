@@ -1,4 +1,3 @@
-export { setCatalog } from "./setCatalog";
-export { addItemToCart, clearCart, removeItemFromCart, decreaseCount } from "./cartActions";
-export { setSortBy, setFilter } from "./setCatalogBarAction";
-export { inputAction, clearInputs } from "./formActions"
+export * from "./catalogActions";
+export * from "./cartActions";
+export * from "./formActions"

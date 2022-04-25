@@ -1,32 +1,17 @@
-import React, {useRef, useState} from "react";
-import {useDispatch } from "react-redux";
-import {setFilter, setSortBy} from "../../redux/actions";
+import React, {useEffect, useRef, useState} from "react";
 import {Button} from "../Buttons/Button";
 import {DropDown} from "../DropDown/DropDown";
-import {useStyles} from "./styles";
 import {filters, sort} from "../../utilities";
+import {useStyles} from "./styles";
 
-export const Bar = React.memo(() => {
+export const Bar = React.memo(({onSelectFilter, onClickSortBy}) => {
   const styles = useStyles()
-  const dispatch = useDispatch();
   const sortRef = useRef();
+
   const [visible, setVisible] = useState(false);
-
-  //TODO: redux-thunk
-  //TODO: onclick
-  const onSelectFilter = React.useCallback((value) => {
-    dispatch(setFilter(value));
-  }, [dispatch] );
-
-  const onSelectSortBy = React.useCallback((value) => {
-    dispatch(setSortBy(value));
-  }, [dispatch] );
-
-
 
   const toggleVisibility = () => {
     setVisible(!visible);
-    console.log(visible)
   };
 
   const handleClick = (evt) => {
@@ -38,13 +23,13 @@ export const Bar = React.memo(() => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.body.addEventListener("click", handleClick);
   }, []);
 
   const selectItem = (item) => {
     setVisible(!visible);
-    onSelectSortBy(item);
+    onClickSortBy(item);
   };
 
   return (

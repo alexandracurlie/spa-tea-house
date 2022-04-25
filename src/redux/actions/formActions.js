@@ -1,7 +1,6 @@
-export const inputAction = (id, value) => ({
-    type: "SET_VALUE",
+export const inputAction = (value) => ({
+    type: "SET_USER_INFO",
     payload: value,
-    id: id
 });
 
 export const clearInputs = () => ({

@@ -1,16 +1,20 @@
-import React from "react";
+import React, {useMemo} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {Link} from "react-router-dom";
 import {Main, CartItem, Button} from "../../components";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { addItemToCart, decreaseCount, removeItemFromCart } from "../../redux/actions";
+import {addItemToCart, decreaseCount, removeItemFromCart} from "../../redux/actions";
+import {countItems, getTotalPrice} from "../../utilities";
 import {CartTitle} from "../../utilities";
 import {useStyles} from "./styles";
 
-export const Cart = React.memo(() => {
+export const Cart = () => {
   const dispatch = useDispatch();
   const styles = useStyles()
-  const { items, totalCartCost } = useSelector(({ cart }) => cart);
-  const goods = Object.keys(items).map((key) => items[key].items[0]);
+
+  const { items } = useSelector(({ cart }) => cart);
+  const uniqueItems = [...new Set(items)]
+
+  const total = useMemo(() => getTotalPrice(items), [items])
 
   const increase = (item) => {
     dispatch(addItemToCart(item));
@@ -27,12 +31,12 @@ export const Cart = React.memo(() => {
   return (
       <Main className={"cart"}
             title={"Cart"}
-            subtitle={ goods.length === 0 ? CartTitle.empty : CartTitle.full }>
+            subtitle={ items.length === 0 ? CartTitle.empty : CartTitle.full }>
         <div className={styles.container}>
-          {goods && goods.map((item) => (
+          {uniqueItems && uniqueItems.map((item) => (
               <CartItem props={item}
                         key={`${item.name}_${item.id}`}
-                        count={items[item.id].items.length}
+                        count={countItems(items, item.id)}
                         onClickTrash={removeItem}
                         onClickPlus={increase}
                         onClickMinus={decrease} />
@@ -41,14 +45,14 @@ export const Cart = React.memo(() => {
         <div className={styles.containerTotal}>
           <p className={styles.total}>
             Total<span>&#8364;</span>
-            {totalCartCost}
+            {total}
           </p>
           <Link to={"/spa-tea-house/form"}>
-            <Button disabled={goods.length === 0}>
-              Continue
-            </Button>
+            <Button disabled={items.length === 0}
+                    name={"Continue"}
+            />
           </Link>
         </div>
       </Main>
   );
-})
+}

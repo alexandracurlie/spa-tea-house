@@ -1,15 +1,12 @@
 import { combineReducers } from "redux";
 import catalogReducer from "./catalogReducer";
-import catalogBarReducer from "./catalogBarReducer";
 import cartReducer from "./cartReducer";
-import inputReducer from "./inputReducer";
-
+import formReducer from "./formReducer";
 
 const rootReducer = combineReducers({
   catalog: catalogReducer,
-  catalogBar: catalogBarReducer,
   cart: cartReducer,
-  user: inputReducer
+  user: formReducer
 });
 
 export default rootReducer;
