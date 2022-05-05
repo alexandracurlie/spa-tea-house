@@ -1,135 +1,39 @@
-@import "variables";
-
 @media screen and (max-width: 1200px) {
-   .container {
-      width: 1140px;
-   }
-}
-
-@media screen and (max-width: 1199px) {
    .container {
       width: 960px;
    }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 960px) {
    .container {
       width: 720px;
    }
 
-   .info .steps-container {
-      flex-wrap: wrap;
+   .column-content {
+      flex-direction: column;
    }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 760px) {
    .container {
       width: 540px;
    }
 
-   .navigation {
-      justify-content: space-between;
-      position: relative;
-
-      .logo {
-         width: 250px;
-      }
+   .show {
+      display: block !important;
    }
 
-   .navigation .menu-burger {
-      display: block;
+   .hide {
+      display: none !important;
    }
 
-   .navigation .menu {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: absolute;
-      top: 60px;
-      right: -100%;
-      background-color: $background;
-      width: 50%;
-      height: 100vh;
-      z-index: 1;
-      border-left: 1px solid $tools-color;
-      transition: all 0.5s ease;
-
-      a {
-         font-size: 15px;
-         margin: 30px;
-      }
-   }
-
-   .navigation .show-menu {
-      right: 0;
-   }
-
-   footer .footer-text p {
-      font-size: 0.7rem;
-   }
-
-   .catalog {
-      .btn-bar {
-         flex-wrap: wrap;
-
-         .sort-container {
-            width: 100%;
-         }
-      }
-   }
-
-   .about-us .carousel-item p {
-      padding: 20px;
-      font-size: 10px;
+   header {
+      padding: 0 !important;
    }
 }
 
 @media screen and (max-width: 575px) {
    .container {
       width: 100%;
-   }
-
-   html {
-      font-size: 12px;
-   }
-
-   .navigation {
-      .logo span:first-child {
-         font-size: 20px;
-      }
-   }
-
-   footer .footer-text {
-      flex-direction: column;
-      align-items: center;
-   }
-
-   .btn-next-container {
-      @include centred-elements;
-   }
-
-   .catalog .catalog-bar {
-      flex-wrap: wrap;
-
-      .sort-container {
-         width: 100%;
-      }
-   }
-   .about-us .carousel-item p {
-      padding: 20px;
-   }
-}
-
-@media screen and (max-width: 430px) {
-   .catalog .catalog-bar .filters-container {
-      flex-wrap: wrap;
-   }
-
-   .cart .cart-container {
-      font-weight: 200;
-   }
-
-   .about-us .carousel-item p {
-      padding: 20px;
    }
 }

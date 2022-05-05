@@ -1,10 +1,11 @@
-import React, {useEffect, useRef, useState} from "react";
-import {Button} from "../Buttons/Button";
-import {DropDown} from "../DropDown/DropDown";
-import {filters, sort} from "../../utilities";
+import React, {memo, useEffect, useRef, useState} from "react";
+import {useDispatch} from "react-redux";
+import {Button, DropDown} from "../../components";
+import {setFilter, setSortBy} from "../../redux/actions";
 import {useStyles} from "./styles";
 
-export const Bar = React.memo(({onSelectFilter, onClickSortBy}) => {
+export const Bar = memo(({filters, sortBy}) => {
+  const dispatch = useDispatch()
   const styles = useStyles()
   const sortRef = useRef();
 
@@ -27,26 +28,30 @@ export const Bar = React.memo(({onSelectFilter, onClickSortBy}) => {
     document.body.addEventListener("click", handleClick);
   }, []);
 
-  const selectItem = (item) => {
-    setVisible(!visible);
-    onClickSortBy(item);
-  };
+  const onSetFilter = (item) => {
+    dispatch(setFilter(item))
+  }
+
+  const onSetSortBy = (item) => {
+    dispatch(setSortBy(item))
+    toggleVisibility()
+  }
 
   return (
-      <div className={styles.container} ref={sortRef}>
-        <div className={styles.containerFilter}>
+      <div className={`${styles.container}`} ref={sortRef}>
+        <div className={`${styles.containerFilter} `}>
           { filters && filters.map((filter) => (
-              <Button name={filter}
-                      onClick={() => onSelectFilter(filter)}
-                      key={filter} /> ))
+              <Button key={filter}
+                      name={filter}
+                      onClick={() => onSetFilter(filter)}
+              />))
           }
         </div>
         <div className={styles.containerSort}>
           <Button name={"Sort by"}
                   onClick={toggleVisibility} />
 
-          { visible && <DropDown data={sort}
-                                 onClick={selectItem} /> }
+          { visible && <DropDown data={sortBy} onClick={onSetSortBy} /> }
         </div>
       </div>
   )

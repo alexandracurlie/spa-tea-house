@@ -1,58 +1,32 @@
-import React, {useEffect} from "react";
+import React, {useEffect, memo} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {CatalogItem, Main} from "../../components";
-import {Bar} from "../../components/Bar/Bar";
-import {addItemToCart, decreaseCount, setFilter, setSortBy} from "../../redux/actions";
+import {CatalogItem, Page, Bar} from "../../components";
 import {fetchCatalog} from "../../redux/actions";
-import {countItems} from "../../utilities";
+import {filters, sort} from "../../utilities";
 import {useStyles} from "./styles";
 
-export const Catalog = () => {
+export const Catalog = memo(() => {
   const dispatch = useDispatch();
   const styles = useStyles()
 
   const catalogItems = useSelector(({ catalog }) => catalog.items);
-  const cartItems = useSelector(({ cart }) => cart.items);
   const {filter, sortBy} = useSelector(({catalog}) => catalog)
 
   useEffect(() => {
     dispatch(fetchCatalog(filter, sortBy))
-  }, [filter, sortBy]);
-
-  const addToCart = (item) => {
-    dispatch(addItemToCart(item));
-  }
-
-  const decrease = (id) => {
-    dispatch(decreaseCount(id))
-  }
-
-  const selectFilter = (value) => {
-    dispatch(setFilter(value))
-  }
-
-  const selectSortBy = (value) => {
-    dispatch(setSortBy(value))
-  }
+  }, [dispatch, filter, sortBy]);
 
   return (
-    <Main className={"catalog"}
-          title={"Catalog"}
-          subtitle={"exclusive tastes for Kings and Queens"}>
-
-      <Bar onSelectFilter={selectFilter}
-           onClickSortBy={selectSortBy}
-      />
-
-      <div className={styles.container}>
-        {catalogItems && catalogItems.map((item) => (
-            <CatalogItem props={item}
-                         key={item.id}
-                         count={countItems(cartItems, item.id)}
-                         addToCart={addToCart}
-                         decrease={decrease} />
-          ))}
-      </div>
-    </Main>
+      <Page title={"Catalog"}
+            subtitle={"exclusive tastes for Kings and Queens"}>
+        <div className="container">
+          <Bar filters={filters} sortBy={sort} />
+          <div className={styles.container}>
+            {catalogItems && catalogItems.map((item) => (
+                <CatalogItem key={item.id} props={item} />
+            ))}
+          </div>
+        </div>
+      </Page>
   );
-};
+})

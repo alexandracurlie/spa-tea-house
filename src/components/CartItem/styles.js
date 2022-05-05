@@ -6,6 +6,7 @@ export const useStyles = makeStyles(() => ({
     display: "flex",
     padding: 5,
     maxWidth: 900,
+    width: "100%",
   },
 
   row: {
@@ -24,7 +25,6 @@ export const useStyles = makeStyles(() => ({
     '&:nth-child(3)': {
       flex: 3,
       justifyContent: "space-evenly",
-
     },
 
     '&:nth-child(4)': {
@@ -58,8 +58,11 @@ export const useStyles = makeStyles(() => ({
   },
 
   trash: {
+    boxShadow: "none",
+
     '&:hover': {
       color: Colors.pink,
+      boxShadow: "none",
     }
   },
 }))

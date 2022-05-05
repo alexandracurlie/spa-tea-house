@@ -1,58 +1,39 @@
 import React, {useMemo} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {Link} from "react-router-dom";
-import {Main, CartItem, Button} from "../../components";
-import {addItemToCart, decreaseCount, removeItemFromCart} from "../../redux/actions";
-import {countItems, getTotalPrice} from "../../utilities";
-import {CartTitle} from "../../utilities";
+import {useSelector} from "react-redux";
+import {CartItem, Page, NavButton} from "../../components";
+import {getTotalPrice, CartTitle, FORM_URL} from "../../utilities";
 import {useStyles} from "./styles";
 
-export const Cart = () => {
-  const dispatch = useDispatch();
+export const Cart = React.memo(() => {
   const styles = useStyles()
 
   const { items } = useSelector(({ cart }) => cart);
   const uniqueItems = [...new Set(items)]
 
   const total = useMemo(() => getTotalPrice(items), [items])
-
-  const increase = (item) => {
-    dispatch(addItemToCart(item));
-  };
-
-  const decrease = (item) => {
-    dispatch(decreaseCount(item));
-  };
-
-  const removeItem = (id) => {
-    dispatch(removeItemFromCart(id));
-  };
+  const subtitle = useMemo(() => items.length === 0 ? CartTitle.empty : CartTitle.full, [items])
 
   return (
-      <Main className={"cart"}
-            title={"Cart"}
-            subtitle={ items.length === 0 ? CartTitle.empty : CartTitle.full }>
-        <div className={styles.container}>
-          {uniqueItems && uniqueItems.map((item) => (
-              <CartItem props={item}
-                        key={`${item.name}_${item.id}`}
-                        count={countItems(items, item.id)}
-                        onClickTrash={removeItem}
-                        onClickPlus={increase}
-                        onClickMinus={decrease} />
-          ))}
+      <Page title={"Your cart"} subtitle={subtitle}>
+        <div className="container">
+          <div className={styles.content}>
+            <div className={styles.container}>
+              {uniqueItems && uniqueItems.map((item) => (
+                  <CartItem key={item.id} props={item} />
+              ))}
+            </div>
+            <div className={styles.containerTotal}>
+              <p className={styles.total}>
+                Total<span>&#8364;</span>
+                {total}
+              </p>
+              <NavButton path={FORM_URL}
+                         disabled={items.length === 0}
+                         name={"Continue"}
+              />
+            </div>
+          </div>
         </div>
-        <div className={styles.containerTotal}>
-          <p className={styles.total}>
-            Total<span>&#8364;</span>
-            {total}
-          </p>
-          <Link to={"/spa-tea-house/form"}>
-            <Button disabled={items.length === 0}
-                    name={"Continue"}
-            />
-          </Link>
-        </div>
-      </Main>
+      </Page>
   );
-}
+})

@@ -2,12 +2,13 @@ import {makeStyles} from "@mui/styles";
 
 export const useStyles = makeStyles(() => ({
   container: {
+    padding: "40px",
+  },
+
+  content: {
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     alignItems: "center",
     flexWrap: "wrap",
-    width: "90%",
-    padding: "10px 0",
-    margin: "auto",
   },
 }))

@@ -5,6 +5,7 @@ import {dataFooter} from "../../utilities";
 
 export const Footer = () => {
   const styles = useStyles()
+
   return (
       <footer className={styles.footer}>
         { dataFooter.map(item =>

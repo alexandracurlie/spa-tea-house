@@ -1,9 +1,13 @@
-export { Header } from "./Header";
-export { Footer } from "./Footer/Footer";
-export { Button } from "./Buttons/Button";
-export { Section, Main } from "./Sector";
-export { CatalogItem } from "./CatalogItem/CatalogItem";
-export { Input } from "./Input";
-export { Select } from "./Select";
-export { Textarea } from "./Textarea";
-export { CartItem } from "./CartItem/CartItem"
+export * from "./Header/Header";
+export * from "./Footer/Footer";
+export * from "./Buttons/Button";
+export * from "./Page/Page";
+export * from "./CatalogItem/CatalogItem";
+export * from "./Input";
+export * from "./Select";
+export * from "./Textarea";
+export * from "./CartItem/CartItem";
+export * from "./Bar/Bar";
+export * from "./Containers/Section/Section";
+export * from "./Containers/Article/Article";
+export * from "./DropDown/DropDown";

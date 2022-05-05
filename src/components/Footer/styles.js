@@ -6,9 +6,6 @@ export const useStyles = makeStyles(() => ({
     display: "flex",
     justifyContent: "space-evenly",
     alignItems: "center",
-    position: "absolute",
-    bottom: 0,
-    height: 70,
     backgroundColor: Colors.black,
   },
 

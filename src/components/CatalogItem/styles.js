@@ -1,6 +1,8 @@
 import {makeStyles} from "@mui/styles";
 import {Colors, Shadows} from "../../styles";
 
+//TODO: make global style for buttons that doesnt need shadow
+
 export const useStyles = makeStyles(() => ({
   card: {
     display: "flex",
@@ -34,10 +36,10 @@ export const useStyles = makeStyles(() => ({
 
   description: {
     height: 50,
-    fontSize: 12,
-    color: Colors.gray,
     padding: 5,
     width: "100%",
+    fontSize: 12,
+    color: Colors.gray,
   },
 
   price: {
@@ -58,10 +60,20 @@ export const useStyles = makeStyles(() => ({
   add: {
     width: "100%",
     height: "100%",
+    fontFamily: "Montserrat, sans-serif",
+    boxShadow: "none",
+
+    '&:hover, &:focus': {
+      boxShadow: "none",
+    }
   },
 
   count: {
     flex: 1,
-  },
+    boxShadow: "none",
 
+    '&:hover, &:focus': {
+      boxShadow: "none",
+    }
+  },
 }))

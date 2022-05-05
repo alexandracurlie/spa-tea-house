@@ -5,15 +5,25 @@ export const useStyles = makeStyles(() => ({
   container: {
     display: "flex",
     flexDirection: "column",
-    maxWidth: 800,
-    margin: "2rem auto",
+    minHeight: 200,
+    margin: "20px 0",
 },
+
+  content: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    width: "100%",
+    maxWidth: 800,
+    margin: "auto",
+  },
 
   containerTotal: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    margin: "50px 0",
   },
 
   total: {

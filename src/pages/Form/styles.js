@@ -1,5 +1,5 @@
 import {makeStyles} from "@mui/styles";
-import {Shadows} from "../../styles";
+import {Colors, Shadows} from "../../styles";
 
 export const useStyles = makeStyles(() => ({
   form: {
@@ -60,6 +60,16 @@ export const useStyles = makeStyles(() => ({
     '&:checked': {
       boxShadow: Shadows.in,
      }
+  },
+
+  tooltip: {
+    display: "block",
+    padding: "5px 0",
+    textAlign: "center",
+    visibility: "hidden",
+    fontSize: "0.8rem",
+    backgroundColor: "transparent",
+    color: Colors.pink,
   },
 
   button: {

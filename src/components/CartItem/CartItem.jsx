@@ -1,23 +1,29 @@
-import {memo} from "react";
-import {Button} from "../index"
+import React, {useCallback, useMemo} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {Button} from "../../components";
+import {addItemToCart, decreaseCount, removeItemFromCart} from "../../redux/actions";
+import {countItems} from "../../utilities";
 import {useStyles} from "./styles";
 
-export const CartItem = memo(({ props, count, onClickPlus, onClickMinus, onClickTrash}) => {
+export const CartItem = ({ props }) => {
   const styles = useStyles()
+  const dispatch = useDispatch()
 
-  const increase = () => {
-    onClickPlus(props);
-  };
+  const { items } = useSelector(({ cart }) => cart);
 
-  const decrease = () => {
-    onClickMinus(props.id);
-  };
+  const increase = useCallback(() => {
+    dispatch(addItemToCart(props));
+  }, [dispatch, props])
 
-  const removeItem = () => {
-    onClickTrash(props.id);
-  };
+  const decrease = useCallback(() => {
+    dispatch(decreaseCount(props.id));
+  }, [dispatch, props.id])
 
-  // TODO: table is better
+  const removeItem = useCallback(() => {
+    dispatch(removeItemFromCart(props.id));
+  }, [dispatch, props.id])
+
+  const count = useMemo(() => countItems(items, props.id), [items, props.id])
 
   return (
       <div className={styles.container}>
@@ -55,4 +61,4 @@ export const CartItem = memo(({ props, count, onClickPlus, onClickMinus, onClick
         </div>
       </div>
   );
-})
+}

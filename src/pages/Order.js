@@ -1,9 +1,9 @@
-import { Main } from "../components";
-import { Link } from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import _ from "lodash"
 import React from "react";
+import { Link } from "react-router-dom";
+import _ from "lodash";
+import {Page} from "../components";
 import {clearCart, clearInputs} from "../redux/actions";
+import {useDispatch, useSelector} from "react-redux";
 
 export const Order = () => {
     const dispatch = useDispatch()
@@ -17,7 +17,7 @@ export const Order = () => {
     }
 
   return (
-    <Main className={"order"} title={"Woohoo!"} subtitle={"Order № 123123123"}>
+    <Page className={"order"} title={"Woohoo!"} subtitle={"Order № 123123123"}>
 
       <div className={"information"}>
         <p>
@@ -39,6 +39,6 @@ export const Order = () => {
                 Home
             </Link>
         </div>
-    </Main>
+    </Page>
   );
 };
