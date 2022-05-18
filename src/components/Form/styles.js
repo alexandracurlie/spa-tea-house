@@ -20,6 +20,15 @@ export const useStyles = makeStyles(() => ({
     flexDirection: "column",
     padding: 5,
     minWidth: 300,
+    // border: "1px solid red",
+  },
+
+  helper: {
+    margin: "auto",
+    fontSize: 12,
+    color: Colors.pink,
+    marginTop: 5,
+    height: "12px",
   },
 
   label: {

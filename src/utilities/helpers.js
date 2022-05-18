@@ -25,3 +25,16 @@ export const sortItems = (items, sortBy) => {
 
 export const filterItems = (items, filter) =>
     items.filter((item) => filter === "All" ? item : item.type === filter);
+
+export const isEmptyObj = (obj) => {
+  return Object.keys(obj).length === 0
+}
+
+export const capitalize = (value) => {
+  const array = value.split(' ')
+
+  return array.map(item => {
+    const [first, ...rest] = item
+    return first.toUpperCase() + rest.join('')
+  })
+}

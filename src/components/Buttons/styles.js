@@ -22,7 +22,7 @@ export const useStyles = makeStyles(() => ({
     '&:active': {
       color: Colors.pink,
     },
-      '&:disabled': {
+      '&:disabled, & .disabled': {
         color: Colors.gray,
         boxShadow: Shadows.out,
       }

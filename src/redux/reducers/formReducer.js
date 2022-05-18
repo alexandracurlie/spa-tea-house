@@ -21,20 +21,6 @@ const formReducer = (state = initialState, action) => {
                 form: action.payload,
             };
 
-        case "CLEAR_INPUTS":
-            return {
-                ...state,
-                form: {
-                    name: "",
-                    phone: "",
-                    email: "",
-                    address: "",
-                    date: "",
-                    time: "",
-                    comment: ""
-                },
-            }
-
         default:
             return state;
     }

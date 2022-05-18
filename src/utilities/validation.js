@@ -6,11 +6,25 @@ const emailRegexp = /^[a-z0-9\-!#$%&'*.+\/=?^_`{|}~]+@[a-z0-9_-]+(\.[a-z0-9_-]+)
 
 export const FormSchema = Yup.object({
   name: Yup.string()
-      .matches(nameRegexp, 'Invalid name')
       .max(20, 'Must be 20 characters or less')
-      .min(2, 'Must be 2 characters or more'),
+      .min(2, 'Must be 2 characters or more')
+      .matches(nameRegexp, 'Invalid name')
+      .required("required"),
+
   phone: Yup.string()
-      .matches(phoneRegExp, 'Phone number is not valid'),
+      .matches(phoneRegExp, 'Phone number is not valid')
+      .required("required"),
+
   email: Yup.string()
       .matches(emailRegexp, 'Email is not valid')
+      .required("required"),
+
+  date: Yup.string()
+      .required("required"),
+
+  time: Yup.string()
+      .required("required"),
+
+  address: Yup.string()
+      .required("required"),
 });
